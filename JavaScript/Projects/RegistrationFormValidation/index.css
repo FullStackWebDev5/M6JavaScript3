@@ -1,0 +1,8 @@
+.registration-form{
+	width: 800px;
+  margin: 10px auto;
+}
+
+.valid-feedback, .invalid-feedback {
+	display: block;
+}
