@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Data Types and Truthy/Falsy concepts</title>
+	<script>
+		/*
+			Data Types
+			1. Primitive
+				a. Number (-1, 0, 34934, 367839.387849, etc)
+				b. String ('a', 'Shradha', '', etc)
+				c. Boolean (true/false)
+				d. undefined
+				e. null (Empty placeholder)
+				f. BigInt (< -2^53 or > 2^53)
+				g. Symbol
+
+			2. Non-Primitive 
+				a. Object
+		*/
+
+		/*
+			Truthy/Falsy
+			- Boolean (true/false)
+
+			Truthy:
+			- Any non-zero number
+			- Any non-empty string
+
+
+			Falsy:
+			- 0
+			- Empty String
+			- undefined
+			- null
+			- NaN
+		*/
+
+		let x = NaN
+
+		if(x) {
+			console.log('Yes')
+		} else {
+			console.log('No')
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+<!--
+	== : Checks only for value
+	=== : Checks for value + type
+
+	+ two operations:
+	Numbers: Addition
+	Strings: Concatenation 
+	Atleast one string: Concatenation
+
+	typeof() -> returns data type of that value
+-->
