@@ -19,6 +19,27 @@
 		/*
 			"My name is Srajan Sen. I'm in batch 20 pursuing Front-End Web Development course. I like icecream. My hobbies are dancing, singing and listening to music."
 		*/
+		
+		let srajanDetails = {
+			firstName: 'Srajan',
+			lastName: 'Sen',
+			batchNo: 20,
+			course: 'Front-End Web Development',
+			hobbies: ['dancing', 'singing', 'listening to music'],
+			likesIceCream: false
+		}
+
+		let srajanIntroduction = "My name is " + srajanDetails.firstName + " " + srajanDetails.lastName + ". I'm in batch " + srajanDetails.batchNo + " pursuing " + srajanDetails.course + " course."
+
+		if(srajanDetails.likesIceCream) {
+			srajanIntroduction = srajanIntroduction + " I like icecream."
+		} else {
+			srajanIntroduction = srajanIntroduction + " I don't like icecream."
+		}
+
+		srajanIntroduction = srajanIntroduction + " My hobbies are " + srajanDetails.hobbies
+
+		console.log(srajanIntroduction)
 	</script>
 </head>
 <body>

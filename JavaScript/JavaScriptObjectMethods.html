@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Object Methods</title>
+	<script>
+		// function abc() {
+		// 	console.log('abc')
+		// }
+
+		// Anonymous Function
+		// let abc = function () { // Function expression
+		// 	console.log('abc')
+		// }
+
+		// Properties: Keys having value other than function
+		// Methods: Keys having function as a value
+
+		// let mohan = {
+		// 	firstName: 'Mohan',
+		// 	lastName: 'Endla',
+		// 	batchNo: 12,
+		// 	sayHi: function () {
+		// 		console.log('Hi people!')
+		// 	},
+		// 	fullName: function () {
+		// 		return 'Mohan Endla'
+		// 	}
+		// }
+
+		// mohan.sayHi()
+		// console.log(mohan.fullName())
+
+		let mohan = {
+			firstName: 'Amol',
+			lastName: 'Rathod',
+			batchNo: 12,
+			sayHi: function () {
+				console.log('Hi people!')
+			},
+			fullName: function () {
+				return this.firstName + ' ' + this.lastName
+			},
+			displayIntroduction: function () {
+				return "My name is " + this.fullName() + ". I'm from batch " + this.batchNo + "."
+			}
+		}
+		
+		// this -> Owner of that entity
+		console.log(mohan.displayIntroduction())
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
