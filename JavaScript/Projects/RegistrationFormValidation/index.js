@@ -6,6 +6,7 @@ function validate() {
 	let state = document.getElementById('state').value
 	let zip = document.getElementById('zip').value
 	let tnC = document.getElementById('t-and-c').checked
+	let error = false
 
 	if(firstName.length >= 2) {
 		document.getElementById('first-name-valid').style.display = 'block'
@@ -13,6 +14,7 @@ function validate() {
 	} else {
 		document.getElementById('first-name-invalid').style.display = 'block'
 		document.getElementById('first-name-valid').style.display = 'none'
+		error = true
 	}
 
 	if(lastName.length >= 2) {
@@ -21,6 +23,7 @@ function validate() {
 	} else {
 		document.getElementById('last-name-invalid').style.display = 'block'
 		document.getElementById('last-name-valid').style.display = 'none'
+		error = true
 	}
 
 	if (
@@ -34,6 +37,7 @@ function validate() {
   } else {
     document.getElementById("email-invalid").style.display = "block";
     document.getElementById("email-valid").style.display = "none";
+		error = true
   }
 
 	if(city.length >= 3) {
@@ -42,6 +46,7 @@ function validate() {
 	} else {
 		document.getElementById('city-invalid').style.display = 'block'
 		document.getElementById('city-valid').style.display = 'none'
+		error = true
 	}
 
 	if(state != 'None') {
@@ -50,6 +55,7 @@ function validate() {
 	} else {
 		document.getElementById('state-invalid').style.display = 'block'
 		document.getElementById('state-valid').style.display = 'none'
+		error = true
 	}
 
 	let zipNumber = parseInt(zip)
@@ -59,12 +65,29 @@ function validate() {
 	} else {
 		document.getElementById('zip-invalid').style.display = 'block'
 		document.getElementById('zip-valid').style.display = 'none'
+		error = true
 	}
 
 	if(tnC) {
 		document.getElementById('t-and-c-invalid').style.display = 'none'
 	} else {
 		document.getElementById('t-and-c-invalid').style.display = 'block'
+		error = true
+	}
+
+	if(!error) {
+		alert('Your details have been saved successfully!')
+
+		document.getElementById('registration-form').reset()
+
+		let validFeedbacks = document.getElementsByClassName('valid-feedback')
+		for(let i = 0; i < validFeedbacks.length; i++) {
+			validFeedbacks[i].style.display = 'none'
+		}
+		let invalidFeedbacks = document.getElementsByClassName('invalid-feedback')
+		for(let i = 0; i < invalidFeedbacks.length; i++) {
+			invalidFeedbacks[i].style.display = 'none'
+		}
 	}
 }
 
@@ -99,3 +122,17 @@ function validate() {
 // parseInt - Returns Number equivalent of String, if cannnot - then returns NaN
 // isNaN - Returns true if value is NaN
 // !isNaN -> Returns true if value is Number
+
+/*
+	- If no errors,
+	1. Reset the form, reset valid and invalid messages
+	2. Alert: 'Your details have been saved successfully!'
+*/
+
+// document.getElementById('first-name').value = ''
+// document.getElementById('last-name').value = ''
+// document.getElementById('email').value = ''
+// document.getElementById('city').value = ''
+// document.getElementById('state').value = ''
+// document.getElementById('zip').value = ''
+// document.getElementById('t-and-c').checked = false 
