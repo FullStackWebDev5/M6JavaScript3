@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ES6</title>
+	<script>
+		// ES6 -> ECMA Script 6 (2015)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			1. Template Strings
+			- Should start and end with backtick (`)
+			- To use variables: ${}
+		*/
+
+		// let rajashekar = {
+		// 	firstName: 'Rajashekar',
+		// 	lastName: 'Ballu',
+		// 	batchNo: 22,
+		// 	city: 'Bangalore',
+		// 	state: 'Karnataka',
+		// 	country: 'India'
+		// }
+
+		// console.log("My name is " + rajashekar.firstName + ' ' + rajashekar.lastName + ". I'm from batch " + rajashekar.batchNo + ". I hail from " + rajashekar.city + ', ' + rajashekar.state + ', ' + rajashekar.country + '.')
+
+		// console.log(`My name is ${rajashekar.firstName} ${rajashekar.lastName}. I'm from batch ${rajashekar.batchNo}. I hail from ${rajashekar.city}, ${rajashekar.state}, ${rajashekar.country}.`)
+
+		// let likesIceCream = false
+		// console.log(`I ${likesIceCream ? 'like' : "don't like"} icecream!`)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			2. let, const
+			- var: global
+			- let: block
+			- const: block + constant
+		*/
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			3. Arrow function
+			- Syntactic sugar of anonymous function
+			- Syntax: () => {}
+		*/
+
+		// function abc() {
+		// 	console.log('abc')
+		// }
+
+		// // Anonymous Function
+		// const abc = function () { // Function expression
+		// 	console.log('abc')
+		// }
+
+		// Arrow Functions
+		// const abc = () => {
+		// 	console.log('abc')
+		// }
+
+		// const sum = (num1, num2) => {
+		// 	console.log(num1 + num2)
+		// }
+
+		// When 1 expression to execute or return
+		// const sum = (num1, num2) => console.log(num1 + num2)
+		// sum(9, 12)
+
+		// const sum = (num1, num2) => num1 + num2
+		// console.log(sum(14, 22))
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			4. Default Parameters
+		*/
+
+		// const sum = (num1 = 0, num2 = 0, num3 = 0) => {
+		// 	console.log(num1 + num2 + num3)
+		// }
+		// sum(4, 2, 9)
+		// sum(4, 2)
+		// sum(5)
+		// sum()
+
+		// const product = (num1 = 1, num2 = 1, num3 = 1) => {
+		// 	console.log(num1 * num2 * num3)
+		// }
+		// product(4, 2, 9)
+		// product(4, 2)
+		// product(5)
+		// product()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+<!-- [condition] ? [condition is true] : [condition is false] -->
