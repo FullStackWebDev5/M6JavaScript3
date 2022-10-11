@@ -170,6 +170,63 @@
 		// 	lastName
 		// } = shradhaDetails
 		// console.log(firstName, lastName)
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			10. Object.entries(): Returns an array of key-value pairs of objects
+		*/
+
+		// let ravi = {
+		// 	firstName: 'Ravi',
+		// 	lastName: 'Chandra',
+		// }
+
+		// console.log(Object.keys(ravi)) // Returns an array of all the keys of that object
+		// console.log(Object.values(ravi)) // Returns an array of all the values of that object
+
+		// console.log(Object.entries(ravi))
+
+		/* 
+			---------------------------------------------------------------------------------------------------
+			11. Object.assign(): Cloning (Shallow)
+		*/
+
+		// let x = 5
+		// let y = x
+		// x = 10
+		// console.log(y)
+
+		// let obj1 = { a: 5, b: 10 }
+		// let obj2 = obj1
+		// obj1.a = 20
+		// console.log(obj2)
+
+		// Cloning (Copy)
+		// 1. Shallow Copy
+		// a. Spread Operator
+		// let obj1 = { a: 5, b: 10 }
+		// let obj2 = { ...obj1 }
+		// obj1.a = 20
+		// console.log(obj2)
+		
+		// b. Object.assign
+		// let obj1 = { a: 5, b: 10 }
+		// let obj2 = Object.assign({}, obj1)
+		// obj1.a = 20
+		// console.log(obj2)
+
+		// 2. Deep Copy
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10,
+		// 	c: {
+		// 		x: 100,
+		// 		y: 500
+		// 	}
+		// }
+		// let obj2 = JSON.parse(JSON.stringify(obj1))
+		// obj1.c.x = 200
+		// console.log(obj2)
 	</script>
 </head>
 <body>
