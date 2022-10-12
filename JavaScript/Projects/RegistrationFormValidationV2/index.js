@@ -82,7 +82,7 @@ function validate(isSubmitted = false) {
 			error = true
 		}
 
-		if(!error) {
+		if(!error && isSubmitted) {
 			alert('Your details have been saved successfully!')
 
 			document.getElementById('registration-form').reset()

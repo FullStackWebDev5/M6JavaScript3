@@ -6,3 +6,16 @@
 	padding: 20px;
 	border-radius: 10px;
 }
+
+#sign-up {
+	display: none;
+}
+
+#sign-up-form {
+	width: 700px;
+	margin: auto;
+}
+
+.form-title {
+	font-size: 2.5em;
+}
