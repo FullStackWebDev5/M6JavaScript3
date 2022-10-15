@@ -7,12 +7,17 @@
 	border-radius: 10px;
 }
 
-#sign-up {
+#sign-up, #sign-in {
 	display: none;
 }
 
 #sign-up-form {
 	width: 700px;
+	margin: auto;
+}
+
+#sign-in-form {
+	width: 400px;
 	margin: auto;
 }
 

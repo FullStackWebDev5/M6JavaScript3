@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Function Methods</title>
+	<script>
+		/*
+			Arrays
+			- Property: length
+			- Methods: push, pop, unshift, shift, filter, map, forEach, etc
+
+			Functions
+			- Property: name (optional), code
+			- Methods: call(), apply(), bind() - Attach object scope to a function
+		*/
+
+		let karishma = {
+			firstName: 'Karishma',
+			lastName: 'Mohammed',
+			batchNo: 15,
+			city: 'Mumbai',
+		}
+
+		let abhay = {
+			firstName: 'Abhay',
+			lastName: 'Gourab',
+			batchNo: 21,
+			city: 'Pune',
+		}
+
+		function introduction(state, country) {
+			console.log(`My name is ${this.firstName} ${this.lastName}. I'm from batch ${this.batchNo}. I hail from ${this.city}, ${state}, ${country}.`)
+		}
+
+		/* ------------------------------------------------------------
+		.call()
+		- It will get invoked immediately
+		- First argument is the 'object to attach' and after that, any other arguments for respective parameters are passed separated by commas
+		- If there are x parameters in function definition, there should be x+1 arguments
+		*/
+
+		// introduction.call(karishma, 'Maharashtra', 'India')
+		// introduction.call(abhay, 'Maharashtra', 'India')
+
+		/* ------------------------------------------------------------
+		.apply()
+		- It will get invoked immediately
+		- First argument is the 'object to attach' and after that, any other arguments for respective parameters are passed in an array
+		- If there are x parameters in function definition, there should be 2 arguments
+		*/
+
+		// introduction.apply(karishma, ['Maharashtra', 'India'])
+
+		/* ------------------------------------------------------------
+		.bind()
+		- Doesn't get invoked immediately
+		- Attach the object to the function and returns an updated function with that object scope 
+		- Single argument: 'object to attach'
+		*/
+
+		let introductionWithBindedObject =  introduction.bind(karishma)
+		introductionWithBindedObject('Maharashtra', 'India')
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
