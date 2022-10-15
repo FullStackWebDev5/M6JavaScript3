@@ -1,10 +1,25 @@
-let userEmail, userPassword
+const USERS_DB = []
 
 const signUp = () => {
-	userEmail = document.getElementById('email').value
-	userPassword = document.getElementById('password').value
+	let firstName = document.getElementById('first-name').value
+	let lastName = document.getElementById('last-name').value
+	let email = document.getElementById('email').value
+	let phoneNumber = document.getElementById('phone-number').value
+	let password = document.getElementById('password').value
 
 	document.getElementById('sign-up-form').reset()
+
+	let userDetails = {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    password,
+  };
+
+	USERS_DB.push(userDetails)
+
+	console.log(USERS_DB)
 	console.log('Sign up successful!')
 }
 
@@ -12,7 +27,13 @@ const signIn = () => {
 	let enteredEmail = document.getElementById('login-email').value
 	let enteredPassword = document.getElementById('login-password').value
 
-	if(enteredEmail === userEmail && enteredPassword === userPassword) {
+	// let requiredUser = USERS_DB.find(function(user, index) {
+	// 	return user.email === enteredEmail && user.password === enteredPassword
+	// })
+
+	let requiredUser = USERS_DB.find(user => user.email === enteredEmail && user.password === enteredPassword)
+
+	if(requiredUser) {
 		console.log('Access granted!')
 	} else {
 		console.log('Access denied!')
