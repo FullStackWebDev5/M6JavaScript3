@@ -21,23 +21,24 @@ const signUp = () => {
 
 	console.log(USERS_DB)
 	console.log('Sign up successful!')
+
+	changeNavLinks(userDetails)
 }
 
 const signIn = () => {
 	let enteredEmail = document.getElementById('login-email').value
 	let enteredPassword = document.getElementById('login-password').value
 
-	// let requiredUser = USERS_DB.find(function(user, index) {
-	// 	return user.email === enteredEmail && user.password === enteredPassword
-	// })
-
 	let requiredUser = USERS_DB.find(user => user.email === enteredEmail && user.password === enteredPassword)
 
 	if(requiredUser) {
 		console.log('Access granted!')
+		changeNavLinks(requiredUser)
 	} else {
 		console.log('Access denied!')
 	}
+
+	document.getElementById('sign-in-form').reset()
 }
 
 const goToHome = () => {
@@ -57,3 +58,27 @@ const goToSignIn = () => {
 	document.getElementById('home').style.display = 'none'
 	document.getElementById('sign-up').style.display = 'none'
 }
+
+const changeNavLinks = (currentUser) => {
+	let { firstName, lastName } = currentUser
+
+	document.getElementById('sign-up-nav-link').style.display = 'none'
+	document.getElementById('sign-in-nav-link').style.display = 'none'
+	document.getElementById('profile-nav-link').style.display = 'block'
+	document.getElementById('sign-out-nav-link').style.display = 'block'
+	
+	document.getElementById('profile-nav-link').innerText = `Hi, ${firstName} ${lastName}`
+}
+
+const signOut = () => {
+	document.getElementById('profile-nav-link').innerText = ''
+
+	document.getElementById('sign-up-nav-link').style.display = 'block'
+	document.getElementById('sign-in-nav-link').style.display = 'block'
+	document.getElementById('profile-nav-link').style.display = 'none'
+	document.getElementById('sign-out-nav-link').style.display = 'none'
+}
+
+// let requiredUser = USERS_DB.find(function(user, index) {
+// 	return user.email === enteredEmail && user.password === enteredPassword
+// })

@@ -24,3 +24,7 @@
 .form-title {
 	font-size: 2.5em;
 }
+
+#profile-nav-link, #sign-out-nav-link {
+	display: none;
+}
