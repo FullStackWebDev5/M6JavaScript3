@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Callbacks</title>
+	<script>
+		// const abc = () => {
+		// 	console.log('abc')
+		// }
+		// abc()
+
+		// Callbacks: 
+		// - Passing a function as an argument to another function
+		// - With an intent to be called back after it's execution
+
+		// const abc = (callback) => {
+		// 	callback()
+		// 	console.log('abc')
+		// }
+		// abc(() => {
+		// 	console.log('def')
+		// })
+
+		// Higher Order Functions:
+		// - Functions which accept another function definition as an argument (Callback)
+		// - Functions which return another function/ have nested functions (Closures)
+
+		// let factorial
+		// const calculateFactorialAPI = (callback) => {
+		// 	// API which took 9s to return the factorial of 15
+		// 	setTimeout(() => {
+		// 		factorial = '1.3076744e+12'
+		// 		callback()
+		// 	}, 9000)
+		// }
+
+		// calculateFactorialAPI(() => {
+		// 	console.log(factorial)
+		// })
+
+		// console.log('START')
+		// const calculateFactorialAPI = (callback) => {
+		// 	// API which took 10s to process some data
+		// 	setTimeout(() => {
+		// 		console.log('Data processed successfully!')
+		// 		callback()
+		// 	}, 10000)
+		// }
+
+		// calculateFactorialAPI(() => {
+		// 	console.log('END')
+		// })
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
