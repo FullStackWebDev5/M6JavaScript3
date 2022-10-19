@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise</title>
+	<script>
+		/*
+			Promises
+			- Handle asynchronous code
+			- Can be used to avoid callback hell scenario (Using promise chaining)
+			- Two properties - state and result (result only in case of resolve/reject)
+
+			Promises States -
+			1. Pending
+			2. Resolved (Fulfilled)
+			3. Rejected
+
+			2 ways
+			Pending -> Resolved -> Settled
+			Pending -> Rejected -> Settled
+
+			Syntax:
+			// Define a promise
+			let promise = new Promise ((resolve, reject) => {
+				// 'resolve' method is for fulfilling the promise (Can send a resolvedMessage - optional)
+				// 'reject' method is for rejecting the promise (Can send a rejectedMessage - optional)
+			})
+
+			// Handle a promise
+			.then method callback -> For executing in case the promise was resolved 
+			(Can have a parameter for resolvedMessage - optional)
+			.catch method callback -> For executing in case the promise was rejected 
+			(Can have a parameter for rejectedMessage - optional)
+		*/
+
+		/* ---------------------------------------------------------------- */
+		// Define a promise which will resolve if variable x is an even number, else will get rejected
+		// let x = 19
+
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	if(x%2 === 0){
+		// 		resolve()
+		// 	} else {
+		// 		reject()
+		// 	}
+		// })
+
+		// promise1.then(() => {
+		// 	console.log('Promise 1 resolved')
+		// }).catch(() => {
+		// 	console.log('Promise 1 rejected')
+		// })
+
+		/* ---------------------------------------------------------------- */
+
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	if(x%2 === 0){
+		// 		resolve('Hurray!')
+		// 	} else {
+		// 		reject('Arghh!')
+		// 	}
+		// })
+
+		// promise1.then((resolvedValue) => {
+		// 	console.log('Promise 1 resolved with the value: ' + resolvedValue)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Promise 1 rejected with the value: ' + rejectedValue)
+		// })
+
+		/* ---------------------------------------------------------------- */
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		reject('Some error occured!')
+		// 	}, 5000)
+		// })
+
+		// console.log(promise1)
+		// promise1.then((resolvedValue) => {
+		// 	console.log('Promise 1 resolved with the value: ' + resolvedValue)
+		// 	console.log(promise1)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Promise 1 rejected with the value: ' + rejectedValue)
+		// 	console.log(promise1)
+		// })
+
+		/* ---------------------------------------------------------------- */
+		// Handling rejection is also possible using second callback of .then method
+		// let x = 5
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	if(x%2 === 0){
+		// 		resolve()
+		// 	} else {
+		// 		reject()
+		// 	}
+		// })
+
+		// promise1.then(() => {
+		// 	console.log('Promise 1 resolved')
+		// }, () => {
+		// 	console.log('Promise 1 rejected')
+		// })
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
