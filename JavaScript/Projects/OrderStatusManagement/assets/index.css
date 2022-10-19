@@ -1,0 +1,15 @@
+.order-id-input {
+	width: 500px;
+	margin: auto;
+}
+
+.order-status-wrapper {
+	width: 600px;
+	margin: auto
+}
+
+.order-status-block {
+	width: 100%;
+	margin: 10px 0;
+	font-size: 1.2em;
+}
