@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise.any, Promise.all</title>
+	<script>
+		const promise1 = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Promise 1 resolved successfully!')
+			}, 5000)
+		})
+
+		const promise2 = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Promise 2 resolved successfully!')
+			}, 8000)
+		})
+
+		const promise3 = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Promise 3 resolved successfully!')
+			}, 6000)
+		})
+
+		// Promise.any([promise1(), promise2(), promise3()])
+		// 	.then((resolvedValue) => console.log(resolvedValue))
+		// 	.catch((rejectedValue) => console.log(rejectedValue))
+
+		/*
+			Promise.any
+			- Will resolve even if a 'SINGLE' promise gets resolved (can be related to || opeartor)
+			- Overall resolved value = Resolved value of first resolved promise
+			- Rejected promises will be skipped, If all promises are rejected - Promise.any will be rejected (catch handler will work)
+			- Overall promise resolve time = resolve time of promise which takes the shortest time to get resolved
+		*/
+
+		Promise.all([promise1(), promise2(), promise3()])
+			.then((resolvedValue) => console.log(resolvedValue))
+			.catch((rejectedValue) => console.log('CATCH: ', rejectedValue))
+
+		/*
+			- Will only resolve if 'ALL' promises gets resolved (can be related to && opeartor)
+			- Overall resolved value will be an array of resolved values from all promises
+			- rejected value will be the first rejected promise value
+			- Overall promise resolve time = resolve time of promise which takes the largest time to resolve
+		*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
