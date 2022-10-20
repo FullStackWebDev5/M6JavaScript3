@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise Chaining</title>
+	<script>
+		/*
+			Order placed 
+			After 2s -> Chef received the order and started preparing
+			After 10s -> Pizza Sauce added
+			After 5s -> First layer of cheeze added
+			After 12s -> Toppings added
+			After 5s -> Second layer of cheeze added
+			After 15s -> Pizza baked!
+			After 8s -> Oregano added and packed
+			After 2s -> Package received at counter
+			The order is ready and handed over to the Zomato guy!
+		*/
+
+		const chefReceivedOrder = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Chef received the order and started preparing')
+				resolve()
+			}, 2000)
+		})
+
+		const pizzaSauceAdded = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Pizza Sauce added')
+				resolve()
+			}, 10000)
+		})
+
+		const firstLayerOfCheezeAdded = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('First layer of cheeze added')
+				resolve()
+			}, 5000)
+		})
+
+		const toppingsAdded = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Toppings added')
+				resolve()
+			}, 12000)
+		})
+
+		const secondLayerOfCheezeAdded = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Second layer of cheeze added')
+				resolve()
+			}, 5000)
+		})
+
+		const pizzaBaked = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Pizza baked!')
+				resolve()
+			}, 15000)
+		})
+
+		const oreganoAddedAndPacked = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Oregano added and packed')
+				resolve()
+			}, 8000)
+		})
+
+		const packageReceivedAtCounter = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				console.log('Package received at counter')
+				resolve()
+			}, 2000)
+		})
+
+		const executeOrder = () => {
+			console.log('Order placed')
+			chefReceivedOrder()
+			.then(pizzaSauceAdded)
+			.then(firstLayerOfCheezeAdded)
+			.then(toppingsAdded)
+			.then(secondLayerOfCheezeAdded)
+			.then(pizzaBaked)
+			.then(oreganoAddedAndPacked)
+			.then(packageReceivedAtCounter)
+			.then(() => {
+				console.log('The order is ready and handed over to the Zomato guy!')
+			})
+		}
+	</script>
+</head>
+<body>
+	<button onclick="executeOrder()">Execute order</button>
+</body>
+</html>
+
+<!--
+		// const executeOrder = () => {
+		// 	console.log('Order placed')
+		// 	chefReceivedOrder().then(() => {
+		// 		return pizzaSauceAdded()
+		// 	}).then(() => {
+		// 		return firstLayerOfCheezeAdded()
+		// 	}).then(() => {
+		// 		return toppingsAdded()
+		// 	}).then(() => {
+		// 		return secondLayerOfCheezeAdded()
+		// 	}).then(() => {
+		// 		return pizzaBaked()
+		// 	}).then(() => {
+		// 		return oreganoAddedAndPacked()
+		// 	}).then(() => {
+		// 		return packageReceivedAtCounter()
+		// 	}).then(() => {
+		// 		console.log('The order is ready and handed over to the Zomato guy!')
+		// 	})
+		// }
+-->
