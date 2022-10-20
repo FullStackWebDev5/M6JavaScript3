@@ -87,7 +87,7 @@
 			.then(packageReceivedAtCounter)
 			.then(() => {
 				console.log('The order is ready and handed over to the Zomato guy!')
-			})
+			}).catch((error) => console.log(error))
 		}
 	</script>
 </head>

@@ -13,3 +13,7 @@
 	margin: 10px 0;
 	font-size: 1.2em;
 }
+
+#order-id-display {
+	display: none;
+}
