@@ -1,0 +1,50 @@
+.page-heading {
+	background-color: #006491;
+	color: white;
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+
+.order-id-input {
+	width: 500px;
+	margin: auto;
+}
+
+.order-status-wrapper {
+	margin: auto
+}
+
+.order-status-block {
+	width: 100%;
+	margin: 10px 0;
+	font-size: 1.2em;
+}
+
+#order-id-display {
+	display: none;
+}
+
+.order-status-wrapper .col-md-3 {
+	margin: 10px 0;
+}
+
+.order-status-wrapper .card {
+	border-radius: 20px;
+}
+
+.order-status-wrapper .card-header {
+	background-color: #006491;
+	color: white;
+	border-radius: 20px 20px 0 0;
+}
+
+.order-status-wrapper .badge.bg-success {
+	font-size: 1.1em;
+	padding: 5px 10px;
+}
+
+.order-status-wrapper .card-footer {
+	background-color: #e31837;
+	color: white;
+	border-radius: 0 0 20px 20px;
+}
