@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Async Await</title>
+	<script>
+		// ASYNC - Attach this keyword to any function - To make it asynchronous/ Handle asynchronous code
+		// AWAIT 
+		// - Waits for resolved state of promise (Returns resolved value of promise)
+		// - await should always be used inside async function
+
+		// async function abc () {
+		// 	return 'abc'
+		// }
+		// console.log(abc())
+
+		/* ------------------------------------------- */
+		// async function abc () {}
+		// const abc = async function () {}
+		// const abc = async () => {}
+		/* ------------------------------------------- */
+		// let x = 5
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	if(x%2 === 0){
+		// 		resolve('Hurray!')
+		// 	} else {
+		// 		reject('Arghh!')
+		// 	}
+		// })
+
+		// let promise1 = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('Data processed successfully!')
+		// 	}, 5000)
+		// })
+
+		// promise1.then((resolvedValue) => {
+		// 	console.log(resolvedValue)
+		// }).catch((rejectedValue) => {
+		// 	console.log('Catch: ' + rejectedValue)
+		// })
+
+		// EQUIVALENT REPRESENTATION HANDLING PROMISES USING ASYNC-AWAIT
+		// const handlePromise = async () => {
+		// 	try {
+		// 		let resolvedValue = await promise1
+		// 		console.log(resolvedValue)
+		// 	} catch (rejectedValue) {
+		// 		console.log('Catch: ' + rejectedValue)
+		// 	}
+		// }
+		// handlePromise()
+
+		const fetchDataFromTheServer = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Fetched data successfully from the server!')
+			}, 5000)
+		})
+
+		const processData = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Processed data successfully!')
+			}, 8000)
+		})
+
+		const mailProcessedDataToTheUsers = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Mailed processed data successfully!')
+			}, 6000)
+		})
+
+		const handleData = async () => {
+			try {
+				let resolvedValue1 = await fetchDataFromTheServer()
+				console.log(resolvedValue1)
+				let resolvedValue2 = await processData()
+				console.log(resolvedValue2)
+				let resolvedValue3 = await mailProcessedDataToTheUsers()
+				console.log(resolvedValue3)
+			} catch (error) {
+				console.log(error)
+			}
+		}
+		handleData()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
