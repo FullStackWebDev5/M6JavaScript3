@@ -20,6 +20,8 @@ const createOrderCard = (orderId) => {
 	orderStatusSpan.innerText = 'Order Placed'
 	cardFooterDiv.innerText = '21-10-2022 at 11:30 AM'
 
+	orderStatusSpan.id = orderId
+
 	cardDiv.appendChild(cardHeaderDiv)
 	cardBodyDiv.appendChild(cardText)
 	cardBodyDiv.appendChild(orderStatusSpan)

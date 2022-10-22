@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Classes</title>
+	<script>
+		/*
+			JS Classes: Template/ Blueprint for objects, can define methods to process that object
+
+			constructor: Default method of a class which gets invoked during the creation of object
+		*/
+
+		// function Student(fullName, batchNo) {
+		// 	this.fullName = fullName
+		// 	this.batchNo = batchNo
+		// }
+
+		// class Student {
+		// 	constructor (firstName, lastName, batchNo, city, state, country) {
+		// 		this.firstName = firstName
+		// 		this.lastName = lastName
+		// 		this.batchNo = batchNo
+		// 		this.city = city
+		// 		this.state = state
+		// 		this.country = country
+		// 	}
+
+		// 	// Methods
+		// 	// 1. Getter Method - To get some info about the object
+		// 	getFullName() {
+		// 		return `${this.firstName} ${this.lastName}`
+		// 	}
+
+		// 	// 2. Setter Method - To update some info in the object
+		// 	updateBatchNo(newBacthNo) {
+		// 		this.batchNo = newBacthNo
+		// 	}
+
+		// 	updateAddress(city, state, country) {
+		// 		this.city = city
+		// 		this.state = state
+		// 		this.country = country
+		// 	}
+		// }
+		// const rounak = new Student("Rounak", "Kumar", 10, 'Mumbai', 'Maharashtra', 'India');
+		// console.log(rounak);
+
+		// const suman = new Student("Suman", "S", 15, 'Pune', 'Maharashtra', 'India')
+		// suman.updateAddress('Bangalore', 'Karnataka', 'India')
+		// console.log(suman);
+
+		/* ------------------------------------------------ */
+		// Parent - LastName, DNA
+		// Child - LastName, DNA, FirstName, Age
+
+		// Parent - Person
+		class Person {
+			constructor(firstName, lastName) {
+				this.firstName = firstName
+				this.lastName = lastName
+			}
+
+			getFullName() {
+				return `${this.firstName} ${this.lastName}`
+			}
+		}
+
+		// const person1 = new Person('Lakshman', 'Singh')
+		// console.log(person1)
+
+		// Child - Student
+		// class Student {
+		// 	constructor (firstName, lastName, collegeName) {
+		// 		this.firstName = firstName
+		// 		this.lastName = lastName
+		// 		this.collegeName = collegeName
+		// 	}
+		// }
+
+		class Student extends Person { // extends is used for inheritance
+			constructor (firstName, lastName, collegeName) {
+				super(firstName, lastName) // Invokes parent class constructor
+				this.collegeName = collegeName
+			}
+		}
+
+		const student1 = new Student('Lakshman', 'Singh', 'AccioJob')
+		console.log(student1.getFullName())
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

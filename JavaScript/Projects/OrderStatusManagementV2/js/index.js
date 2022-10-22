@@ -3,4 +3,6 @@ const executeOrder = () => {
 	document.getElementById('order-id-input-text').value = ''
 
 	createOrderCard(orderId)
+
+	manageOrderStatus(orderId)
 }
