@@ -36,6 +36,9 @@
 	background-color: #006491;
 	color: white;
 	border-radius: 20px 20px 0 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .order-status-wrapper .badge.bg-success {
@@ -47,4 +50,14 @@
 	background-color: #e31837;
 	color: white;
 	border-radius: 0 0 20px 20px;
+}
+
+#cancel-order {
+	cursor: pointer;
+}
+
+#empty-order-img {
+	height: 200px;
+	display: block;
+  margin: auto;
 }

@@ -2,6 +2,7 @@ const createOrderCard = (orderId) => {
 	let colDiv = document.createElement('div')
 	let cardDiv = document.createElement('div')
 	let cardHeaderDiv = document.createElement('div')
+	let cardHeaderCancelBtn = document.createElement('i')
 	let cardBodyDiv = document.createElement('div')
 	let cardText = document.createElement('p')
 	let orderStatusSpan = document.createElement('span')
@@ -10,18 +11,30 @@ const createOrderCard = (orderId) => {
 	colDiv.classList = 'col-md-3'
 	cardDiv.classList = 'card text-center'
 	cardHeaderDiv.classList = 'card-header'
+	cardHeaderCancelBtn.classList = 'fa-solid fa-xmark'
 	cardBodyDiv.classList = 'card-body'
 	cardText.classList = 'card-text'
 	orderStatusSpan.classList = 'badge rounded-pill bg-success'
 	cardFooterDiv.classList = 'card-footer'
 
-	cardHeaderDiv.innerHTML = `Order ID: <b>${orderId}</b>`
+	cardHeaderDiv.innerHTML = `<span>Order ID: <b>${orderId}</b></span>`
 	cardText.innerHTML = 'Large Pizza - 3 Nos<br>Medium Pizza - 1 Nos<br>Bill Amount: $25'
 	orderStatusSpan.innerText = 'Order Placed'
 	cardFooterDiv.innerText = '21-10-2022 at 11:30 AM'
 
 	orderStatusSpan.id = orderId
+	cardHeaderCancelBtn.id = 'cancel-order'
 
+	cardHeaderCancelBtn.addEventListener('click', () => {
+		colDiv.style.display = 'none'
+		totalOrders--
+
+		if(totalOrders === 0){
+			document.getElementById('empty-order-img').style.display = 'block'
+		}
+	})
+
+	cardHeaderDiv.appendChild(cardHeaderCancelBtn)
 	cardDiv.appendChild(cardHeaderDiv)
 	cardBodyDiv.appendChild(cardText)
 	cardBodyDiv.appendChild(orderStatusSpan)
@@ -31,11 +44,12 @@ const createOrderCard = (orderId) => {
 	document.getElementById('order-cards-wrapper').appendChild(colDiv)
 }
 
-{/* 
+/* 
 <div class="col-md-3">
 	<div class="card text-center">
 		<div class="card-header">
-			Order ID: <b>MP2022102100001</b>
+			<span>Order ID: <b>MP2022102100001</b></span>
+			<i class="fa-solid fa-xmark" id="cancel-order"></i>
 		</div>
 		<div class="card-body">
 			<p class="card-text">
@@ -50,4 +64,10 @@ const createOrderCard = (orderId) => {
 		</div>
 	</div>
 </div>
- */}
+ */
+
+ /*
+	element.addEventListener(event, () => {
+		// code to execute
+	})
+ */
