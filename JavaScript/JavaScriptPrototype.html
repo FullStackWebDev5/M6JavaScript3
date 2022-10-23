@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Prototype</title>
+	<script>
+		/*
+			- Every object in JavaScript has a build-in property called prototype
+			- Prototype is also an object
+			- Prototype can have it's own prototype (Prototype chain - ends when the last prototype down the hierarchy is null)
+
+			Access prototype for any data in JS
+			- Through [[Prototype]] property
+			- Through __proto__ property
+			- Object.getPrototypeOf()
+		*/
+
+		// let obj1 = {
+		// 	a: 5,
+		// 	b: 10
+		// }
+		// console.log(obj1)
+
+		// let arr = [3, 1, 10, 45]
+		// console.log(arr)
+
+		// let str = new String('Sakshi')
+		// console.log(str)
+
+		// let num = new Number(5)
+		// console.log(num)
+
+		// Prototype Chain
+		// obj1 -> Object -> null
+		// arr -> Array -> Object -> null
+		// str -> String -> Object -> null
+		// num -> Number -> Object -> null
+
+		// Prototype Inheritance
+		// let humanBeing = {
+		// 	firstName: 'NA',
+		// 	lastName: 'NA',
+		// 	placeOfRecidence: 'Earth',
+		// 	scientificName: 'Homo Sapiens',
+		// 	sayHi: () => console.log('Hi')
+		// }
+
+		// let nikhil = {
+		// 	firstName: 'Nikhil',
+		// 	placeOfRecidence: 'Pune',
+		// 	__proto__: humanBeing
+		// }
+
+		// nikhil.sayHi()
+	</script>
+</head>
+<body>
+	
+</body>
+</html> 
