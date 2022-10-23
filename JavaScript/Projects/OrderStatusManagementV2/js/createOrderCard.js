@@ -18,9 +18,16 @@ const createOrderCard = (orderId) => {
 	cardFooterDiv.classList = 'card-footer'
 
 	cardHeaderDiv.innerHTML = `<span>Order ID: <b>${orderId}</b></span>`
-	cardText.innerHTML = 'Large Pizza - 3 Nos<br>Medium Pizza - 1 Nos<br>Bill Amount: $25'
+	cardText.innerHTML = `Large Pizza - ${Math.ceil(Math.random()*3)} Nos<br>Medium Pizza - ${Math.ceil(Math.random()*3)} Nos<br>Bill Amount: $${Math.ceil(Math.random()*10) + 10}`
 	orderStatusSpan.innerText = 'Order Placed'
-	cardFooterDiv.innerText = '21-10-2022 at 11:30 AM'
+	cardFooterDiv.innerText = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+		hour: "numeric",
+		minute: "numeric",
+		second: "numeric"
+  });
 
 	orderStatusSpan.id = orderId
 	cardHeaderCancelBtn.id = 'cancel-order'
