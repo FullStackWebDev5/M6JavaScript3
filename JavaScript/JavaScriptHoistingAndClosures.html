@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Hoisting</title>
+	<script>
+		// Hoisting - All declarations are moved to the top during JS runtime
+		// console.log(x)
+		// var x 
+
+		// abc()
+		// function abc() {
+		// 	console.log('abc')
+		// }
+			
+		// console.log(x)
+		// var x = 10
+
+		/* ---------------------------------------------------------------- */
+		// Closures - Inner function continues to have access to outer scope (Lexical scope) variables even after the outer scope has finished
+
+		function outerFunction () {
+			let x = 5
+
+			return function() {
+				console.log(x)
+			}
+		}
+
+		let func1 = outerFunction()
+		func1()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
